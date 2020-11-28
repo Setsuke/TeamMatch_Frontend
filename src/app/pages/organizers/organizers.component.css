@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+}
+.borderLine{
+  margin-top: 3%;
+}
+.gridHeight{
+  height:200px;
+  margin-left: 3%;
+}
+
+tr.editable-row {
+  background-color: lightcyan;
+}

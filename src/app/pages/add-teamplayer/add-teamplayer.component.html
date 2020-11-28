@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{  'Add Players to your Team' }}</mat-card-title>
+  </mat-card-header>
+<form (submit)="onSubmit()" #teamForm="ngForm">
+  <ng-container>
+    <div class="form-row" *ngFor="let obj of dataarray;let i=index">
+
+      <div class="form-group col-md-4">
+        <label>User Name </label><p></p>
+        <mat-form-field>
+        <input matInput placeholder="Name" name="name{{i}}" [(ngModel)]="team.name">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-md-2" >
+        <a mat-button color="warn" (click)="removeForm(i)">-</a>
+      </div>
+    </div>
+      <a mat-button color="primary"(click)="addForm()">+</a>
+      <a mat-button color="primary" >Submit</a>
+
+  </ng-container>
+
+</form>
+</mat-card>

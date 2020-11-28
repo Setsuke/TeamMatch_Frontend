@@ -1,0 +1,14 @@
+<div *ngIf="currentUser; else loggedOut">
+  <header>
+    <h3><strong>{{ currentUser.username }}</strong></h3>
+  </header>
+  <p><strong>Token:</strong>
+    {{ currentUser.token }}
+  </p>
+  <p><strong>Player:</strong>
+    {{ player }}
+  </p>
+</div>
+<ng-template #loggedOut>
+  Please authenticate first.
+</ng-template>

@@ -1,0 +1,15 @@
+table {
+  width: 40%;
+
+
+}
+tr.editable-row {
+  background-color: lightcyan;
+}
+td{
+  background: lightgray;
+}
+tr{
+  background:darkgray;
+
+}

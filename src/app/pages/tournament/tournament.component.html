@@ -1,0 +1,160 @@
+
+<mat-card>
+  <mat-card-title>Free Tournaments</mat-card-title>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> #Id </th>
+        <td mat-cell *matCellDef="let element"> {{ element.id }}</td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{ element.description }}</td>
+      </ng-container>
+      <ng-container matColumnDef="prize">
+        <th mat-header-cell *matHeaderCellDef> Prize </th>
+        <td mat-cell *matCellDef="let element"> {{ element.prize}}</td>
+      </ng-container>
+      <ng-container matColumnDef="publicTournament">
+        <th mat-header-cell *matHeaderCellDef> Public Tournament </th>
+        <td mat-cell *matCellDef="let element"> {{ element.publicTournament}}</td>
+      </ng-container>
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef> Code </th>
+        <td mat-cell *matCellDef="let element"> {{ element.code}}</td>
+      </ng-container>
+      <ng-container matColumnDef="maxTeams">
+        <th mat-header-cell *matHeaderCellDef> Max Teams</th>
+        <td mat-cell *matCellDef="let element"> {{ element.maxTeams}}</td>
+      </ng-container>
+      <ng-container matColumnDef="organizerId">
+        <th mat-header-cell *matHeaderCellDef> organizer Id</th>
+        <td mat-cell *matCellDef="let element"> {{ element.organizerId}}</td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <a href="javascript: void(0)" (click)="navigateToSelectedTournament(element.id)"><mat-icon inline aria-hidden="false" aria-label="visibility">login</mat-icon></a>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+          [ngClass]="{'editable-row': freeData.id === row.id}"></tr>
+    </table>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+
+  <mat-card-title>Professional Tournaments</mat-card-title>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSourceProfessional" class="mat-elevation-z8" >
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> #Id </th>
+        <td mat-cell *matCellDef="let element"> {{ element.id }}</td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{ element.description }}</td>
+      </ng-container>
+      <ng-container matColumnDef="prize">
+        <th mat-header-cell *matHeaderCellDef> Prize </th>
+        <td mat-cell *matCellDef="let element"> {{ element.prize}}</td>
+      </ng-container>
+      <ng-container matColumnDef="publicTournament">
+        <th mat-header-cell *matHeaderCellDef> Public Tournament </th>
+        <td mat-cell *matCellDef="let element"> {{ element.publicTournament}}</td>
+      </ng-container>
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef> Code </th>
+        <td mat-cell *matCellDef="let element"> {{ element.code}}</td>
+      </ng-container>
+      <ng-container matColumnDef="maxTeams">
+        <th mat-header-cell *matHeaderCellDef> Max Teams</th>
+        <td mat-cell *matCellDef="let element"> {{ element.maxTeams}}</td>
+      </ng-container>
+      <ng-container matColumnDef="organizerId">
+        <th mat-header-cell *matHeaderCellDef> organizer Id</th>
+        <td mat-cell *matCellDef="let element"> {{ element.organizerId}}</td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <a href="javascript: void(0)" (click)="navigateToSelectedTournament(element.id)" ><mat-icon inline aria-hidden="false" aria-label="visibility">login</mat-icon></a>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+          [ngClass]="{'editable-row': professionalData.id === row.id}"></tr>
+    </table>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+
+  <mat-card-title>Enrollment  Tournaments</mat-card-title>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSourceEnrollment" class="mat-elevation-z8" >
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> #Id </th>
+        <td mat-cell *matCellDef="let element"> {{ element.id }}</td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> User Name </th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{ element.description }}</td>
+      </ng-container>
+      <ng-container matColumnDef="prize">
+        <th mat-header-cell *matHeaderCellDef> Prize </th>
+        <td mat-cell *matCellDef="let element"> {{ element.prize}}</td>
+      </ng-container>
+      <ng-container matColumnDef="publicTournament">
+        <th mat-header-cell *matHeaderCellDef> Public Tournament </th>
+        <td mat-cell *matCellDef="let element"> {{ element.publicTournament}}</td>
+      </ng-container>
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef> Code </th>
+        <td mat-cell *matCellDef="let element"> {{ element.code}}</td>
+      </ng-container>
+      <ng-container matColumnDef="maxTeams">
+        <th mat-header-cell *matHeaderCellDef> Max Teams</th>
+        <td mat-cell *matCellDef="let element"> {{ element.maxTeams}}</td>
+      </ng-container>
+      <ng-container matColumnDef="enrollmentPlayer">
+        <th mat-header-cell *matHeaderCellDef> Enrollment Player</th>
+        <td mat-cell *matCellDef="let element"> {{ element.enrollmentPlayer}}</td>
+      </ng-container>
+      <ng-container matColumnDef="commissionOrganizer">
+        <th mat-header-cell *matHeaderCellDef> Commission Organizer</th>
+        <td mat-cell *matCellDef="let element"> {{ element.commissionOrganizer}}</td>
+      </ng-container>
+      <ng-container matColumnDef="potChampion">
+        <th mat-header-cell *matHeaderCellDef> Pot Champion</th>
+        <td mat-cell *matCellDef="let element"> {{ element.potChampion}}</td>
+      </ng-container>
+      <ng-container matColumnDef="organizerId">
+        <th mat-header-cell *matHeaderCellDef> organizer Id</th>
+        <td mat-cell *matCellDef="let element"> {{ element.organizerId}}</td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <a href="javascript: void(0)" (click)="navigateToSelectedTournament(element.id)" ><mat-icon inline aria-hidden="false" aria-label="visibility">login</mat-icon></a>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns:  displayedColumns;"
+          [ngClass]="{'editable-row': enrollmentData.id === row.id}"></tr>
+    </table>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+
+
+</mat-card>

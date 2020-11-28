@@ -1,0 +1,6 @@
+table {
+  width: 80%;
+}
+tr.editable-row {
+  background-color: lightcyan;
+}
