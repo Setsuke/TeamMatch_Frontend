@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-const API_URL = 'https://team-match-backend.herokuapp.com/api/users/';
+const API_URL = 'https://obscure-mesa-76333.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
 })

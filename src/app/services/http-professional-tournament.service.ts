@@ -9,7 +9,7 @@ import {ProfessionalTournament} from '../models/professional-tournament';
 })
 export class HttpProfessionalTournamentService {
 
-  basePath = 'https://team-match-backend.herokuapp.com/api/organizers';
+  basePath = 'https://obscure-mesa-76333.herokuapp.com/api/organizers';
   baseTournament = 'professional-tournaments';
   constructor(private http: HttpClient) { }
   httpOptions = {
