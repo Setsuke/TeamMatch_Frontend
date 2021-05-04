@@ -9,7 +9,7 @@ import {catchError, retry} from 'rxjs/operators';
 })
 export class HttpFreeTournamentsService {
 
-  basePath = 'https://team-match-backend.herokuapp.com/api/organizers';
+  basePath = 'https://obscure-mesa-76333.herokuapp.com/api/organizers';
   baseTournament = 'free-tournaments';
   constructor(private http: HttpClient) { }
   httpOptions = {

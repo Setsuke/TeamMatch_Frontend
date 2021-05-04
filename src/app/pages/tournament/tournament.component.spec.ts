@@ -22,4 +22,9 @@ describe('TournamentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be the title', () => {
+    const title = document.getElementById('title').innerHTML;
+    expect(component).toBeTruthy();
+  });
 });

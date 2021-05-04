@@ -28,4 +28,10 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('TeamMatchFrontEnd app is running!');
   });
+
+  it(`should have as title 'TeamMatchFrontEnd'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('TeamMatchFrontEnd');
+  });
 });
