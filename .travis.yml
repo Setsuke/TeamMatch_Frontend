@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- '6'
+before_install:
+- npm install -g @angular/cli
+install: npm install
+branches:
+  only:
+  - master
+after_script:
+- chmod +x publish-gh-pages.sh && ./publish-gh-pages.sh
+deploy:
+  provider: heroku
+  api_key:
+    secure: r4q7M22sZeyP7z1LQIlifka9WKsr9QQNwjFzv9rcJcazgxHMErO3uxf5Hn6FUP0rjwZ0WPkNT49yuv21bwz600TlJFVe8UixZH+Hygz2zm9Njh99EtlrS028X5DdOA/DTHz0dLGcQiC21gpIzL5kXjBKHIF2P0JMWQ1XsQMruMBNZ3CMBel3zUE42EPopdE2iRl9yqOawh/ljHnJXB6WorT1TkPzQhiJFHGtP8Pi/TK/kAwrJL8fBF1P5nwO5wKxecZ/EgPNmylXVsc9pMR8SlJIZX/h6MpWyoM0Im/2I335uPjCS4xAD6ValB40CbnbCJ4gJBt70vxhKGQgeBXgShH8pNkpPS080yTSC67NvMbWOIlZ+qMIR1LplV1tzRzSRtYm6gELREH3awOBxXsF5sBTiD76/1+9Ee4pLUENZs3+2UZVjb3jlpJKPFyZ4yNAKDAvEGELVXFPJ+J1Cb43jnpbsCCf5DI2oLU7+tznys9grvyJBJPJOs6FxueqBSILsILdVbCZ1VY5PKfjA2FOHyZOLkGgm2F0gw6ey7GcTRIIwaDR/JJxyD30ajnxJdl22oguGdlNO2PPCnshRdeXh/b3R/Wv0/aIlrzB9WUTo+H9KFSKT845Yy3uj21owUAc98lGmmloqPkKaqgy50y/i0xBP2+2cMgyt6ZQmjuNnTo=
+  app:
+    master: team-match-master
+    production: team-match-develop
