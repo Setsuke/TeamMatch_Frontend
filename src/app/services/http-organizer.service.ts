@@ -8,7 +8,7 @@ import {Organizer} from '../models/organizer';
   providedIn: 'root'
 })
 export class HttpOrganizerService {
-  basePath = 'https://team-match-backend.herokuapp.com/api/organizers';
+  basePath = 'https://obscure-mesa-76333.herokuapp.com/api/organizers';
   constructor(private http: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({

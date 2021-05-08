@@ -9,8 +9,8 @@ import {TokenStorageService} from './token-storage.service';
   providedIn: 'root'
 })
 export class HttpPlayerService {
-  basePath = 'https://team-match-backend.herokuapp.com/api/players';
-  basePath2 = 'https://team-match-backend.herokuapp.com/api/freeTournaments';
+  basePath = 'https://obscure-mesa-76333.herokuapp.com/api/players';
+  basePath2 = 'https://obscure-mesa-76333.herokuapp.com/api/freeTournaments';
   basePlayer = 'players';
   constructor(private http: HttpClient, tokenStorageService: TokenStorageService) { }
   httpOptions = {
