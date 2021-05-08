@@ -1,14 +1,25 @@
 language: node_js
 node_js:
-- '6'
+- '9'
+dist: trusty
+sudo: required
 before_install:
 - npm install -g @angular/cli
 install: npm install
+before_script:
+  - npm install -g @angular/cli
 branches:
   only:
   - master
+  - develop
 after_script:
 - chmod +x publish-gh-pages.sh && ./publish-gh-pages.sh
+
+script:
+  - ng lint
+  - npm run test-headless
+  - ng build --prod
+
 deploy:
   provider: heroku
   api_key:
