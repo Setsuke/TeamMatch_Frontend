@@ -1,5 +1,6 @@
 table {
-  width: 100%;
+  width: 80%;
+  margin: auto;
 }
 .borderLine{
   margin-top: 3%;
@@ -11,4 +12,15 @@ table {
 
 tr.editable-row {
   background-color: lightcyan;
+}
+
+tr{
+  background:royalblue;
+
+}
+th{
+  color: white;
+}
+td{
+  background: white;
 }
