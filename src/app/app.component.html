@@ -6,20 +6,15 @@
       </button>
       <span class="app-name">Team Match</span>
       <div routerLinkActive="active">
-        <a mat-button *ngIf="isLoggedIn" (click)="toHomePage()">Home</a>
-        <a mat-button *ngIf="isLoggedIn" [routerLink]="'/players'">Players</a>
-        <a mat-button *ngIf="isLoggedIn" [routerLink]="'/organizers'">Organizers</a>
-        <a mat-button *ngIf="isLoggedIn" [routerLink]="'/player/organizers'">Tournaments</a>
-        <a mat-button *ngIf="isLoggedIn" [routerLink]="'/teams'">Teams</a>
+        <a mat-button  (click)="toHomePage()">Home</a>
+        <a mat-button  [routerLink]="'/players'">Players</a>
+        <a mat-button  [routerLink]="'/organizers'">Organizers</a>
+        <a mat-button  [routerLink]="'/player/organizers'">Tournaments</a>
+        <a mat-button  [routerLink]="'/teams'">Teams</a>
       </div>
       <span class="flex-expand"></span>
-      <div *ngIf="!isLoggedIn">
-        <a mat-button [routerLink]="'/register'">Sign Up</a>
-        <a mat-button [routerLink]="'/login'">Sign In</a>
-      </div>
-      <div *ngIf="isLoggedIn">
-        <a mat-button [routerLink]="'/profile'">{{ username }}</a>
-        <a mat-button href (click)="logout()">Sign Out</a>
+      <div >
+        <a mat-button [routerLink]="'/profile'">{{ 'frank_wild@hotmail.com'}}</a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
