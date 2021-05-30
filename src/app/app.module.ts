@@ -26,6 +26,7 @@ import {OrganizerTournamentComponent} from './pages/organizer-tournament/organiz
 import { TournamentPlayerAssingComponent } from './pages/tournament-player-assing/tournament-player-assing.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import {MatTableModule} from '@angular/material/table';
     RegisterComponent,
     TournamentComponent,
     OrganizerTournamentComponent,
-    TournamentPlayerAssingComponent
+    TournamentPlayerAssingComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,8 @@ import {MatTableModule} from '@angular/material/table';
     ReactiveFormsModule,
     MatListModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSidenavModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
