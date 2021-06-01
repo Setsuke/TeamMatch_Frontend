@@ -1,10 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background-color: #222d2d;
+  background-image: url("./assets/fondo.jpg");
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-position: 0 0;
+}
+
+.title-tm{
+  font-family: Book Antiqua;
+  font-size: 350px;
+  margin-bottom: 1200px;
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

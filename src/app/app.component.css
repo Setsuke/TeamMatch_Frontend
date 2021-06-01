@@ -1,3 +1,4 @@
+Updated upstream
 .example-container {
   display: flex;
   flex-direction: column;
@@ -60,4 +61,24 @@ h1.example-app-name {
   background: #4B7BFF;
   color: #fff;
   font-weight: 400;
+=======
+body {
+  background-color: #222d2d;
+  background-image: url("../assets/fondo.jpg");
+  background-repeat: repeat-x;
+  background-position: 0 0;
+}
+
+
+
+
+.flex-expand {
+  flex: 1 1 auto;
+}
+
+
+.app-name {
+  padding-left: 10px;
+  padding-right: 10px;
+>>>>>>> Stashed changes
 }
