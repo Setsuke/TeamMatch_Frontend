@@ -61,15 +61,14 @@ h1.example-app-name {
   background: #4B7BFF;
   color: #fff;
   font-weight: 400;
-=======
-body {
+}
+
+body{
   background-color: #222d2d;
   background-image: url("../assets/fondo.jpg");
   background-repeat: repeat-x;
   background-position: 0 0;
 }
-
-
 
 
 .flex-expand {
@@ -80,5 +79,4 @@ body {
 .app-name {
   padding-left: 10px;
   padding-right: 10px;
->>>>>>> Stashed changes
 }
