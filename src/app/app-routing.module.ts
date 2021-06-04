@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {OrganizersComponent} from './pages/organizers/organizers.component';
+import {PlayersComponent} from './pages/players/players.component' 
 import {TeamsComponent} from './pages/teams/teams.component';
 import {AddTeamplayerComponent} from './pages/add-teamplayer/add-teamplayer.component';
 import {RegisterComponent} from './pages/register/register.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'teams', component: TeamsComponent },
   { path: 'add-teamplayer', component: AddTeamplayerComponent },
   { path: 'organizers', component: OrganizersComponent},
+  { path: 'players', component: PlayersComponent},
   {path: 'register', component: RegisterComponent },
   {path: 'profile', component: ProfileComponent},
   { path: 'organizers/:id/free-tournaments', component: TournamentComponent},
@@ -24,7 +26,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule] 
 })
 export class AppRoutingModule { }
 export const routingComponents = [AppComponent];
