@@ -1,15 +1,17 @@
 table {
-    width: 100%;
-  }
-  .borderLine{
-    margin-top: 3%;
-  }
-  .gridHeight{
-    height:200px;
-    margin-left: 3%;
-  }
-  
-  tr.editable-row {
-    background-color: lightcyan;
-  }
-  
+  width: 80%;
+  margin: auto;
+}
+tr.editable-row {
+  background-color: lightcyan;
+}
+tr{
+  background:royalblue;
+
+}
+th{
+  color: white;
+}
+td{
+  background: white;
+}
