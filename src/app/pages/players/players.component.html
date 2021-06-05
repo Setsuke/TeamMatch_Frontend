@@ -14,10 +14,10 @@
             <input matInput placeholder="Last Name" name="Last Name" required [(ngModel)]="playerData.lastName"/>
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="" name="Kill Death Ratio" required [(ngModel)]="playerData.killDeathRatio"/>
+            <input matInput placeholder="kill Death Ratio" name="Kill Death Ratio" required [(ngModel)]="playerData.killDeathRatio"/>
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="10" name="Hours Played" required [(ngModel)]="playerData.hoursPlayed"/>
+            <input matInput placeholder="Hours Played" name="Hours Played" required [(ngModel)]="playerData.hoursPlayed"/>
           </mat-form-field>
           <ng-container *ngIf="isEditMode; else elseTemplate">
             <button mat-button color="primary">Update</button>
