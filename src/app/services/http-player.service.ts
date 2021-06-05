@@ -41,7 +41,9 @@ export class HttpPlayerService {
       .pipe(retry(2), catchError(this.handleError));
   }
   // Update Player
-  updatePlayer(id, item): Observable<Player>{
+  updatePlayer(id, item): Observable<any>{
+    console.log('id', id);
+    console.log('body', (item))
     return this.http.put<Player>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }

@@ -1,4 +1,9 @@
-<div id="app">
+<div class="example-container"> 
+  <!--
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Team Match</h1> -->
+<div id="app"> 
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <button mat-icon-button>
@@ -7,18 +12,42 @@
       <span class="app-name">Team Match</span>
       <div routerLinkActive="active">
         <a mat-button  (click)="toHomePage()">Home</a>
-        <a mat-button  [routerLink]="'/players'">Players</a>
+        <a mat-button  [routerLink]="'/players'">Player</a>
         <a mat-button  [routerLink]="'/organizers'">Organizers</a>
         <a mat-button  [routerLink]="'/player/organizers'">Tournaments</a>
         <a mat-button  [routerLink]="'/teams'">Teams</a>
       </div>
       <span class="flex-expand"></span>
       <div >
-        <a mat-button [routerLink]="'/profile'">{{ 'frank_wild@hotmail.com'}}</a>
+        <a mat-button [routerLink]="'/profile'">{{ 'Profile'}} <span class="material-icons"> account_circle</span></a>
+        
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
-  <div>
-    <router-outlet></router-outlet>
-  </div>
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav>
+      <mat-nav-list>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a mat-button  (click)="toHomePage()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a mat-button  [routerLink]="'/players'">Players</a>
+          </li>
+          <li class="nav-item">
+            <a mat-button  [routerLink]="'/organizers'">Organizers</a>
+          </li>
+          <li class="nav-item">
+            <a mat-button  [routerLink]="'/player/organizers'">Tournaments</a>
+          </li>
+          <li class="nav-item">
+            <a mat-button  [routerLink]="'/teams'">Teams</a>
+          </li>
+        </ul>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

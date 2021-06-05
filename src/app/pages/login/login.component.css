@@ -1,0 +1,17 @@
+*{
+    /* margin: 20%; */
+    /* border: 2px solid red; */
+}
+.formulario{
+    margin-top: 50px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+.button-login{
+    margin-left: 80%;
+}
