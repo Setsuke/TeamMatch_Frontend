@@ -12,6 +12,7 @@ import { Player } from 'src/app/models/player';
 export class ModalEditProfileComponent implements OnInit {
 
   @Output() edit:any = new EventEmitter();
+  progress_bar: boolean = false;
   editForm: FormGroup;
   constructor(@Inject(MAT_DIALOG_DATA) public player: any, 
               private _formBuilder : FormBuilder,
@@ -31,8 +32,8 @@ export class ModalEditProfileComponent implements OnInit {
       cellphone: [this.player.phoneNumber, [Validators.required, Validators.pattern(pattern)]],
       email: [this.player.emailAddress, [Validators.required, Validators.pattern(pattern)]],
       gender: [this.player.gender, [Validators.required, Validators.pattern(pattern)]],
-      description: [this.player.description, [Validators.required, Validators.pattern(pattern)]],
-      username: [this.player.username, [Validators.required, Validators.pattern(pattern)]]
+      description: [this.player.description, [Validators.required]],
+      birthDate: [this.player.birthDate, [Validators.required]]
     }) 
     return form;
   }
@@ -43,42 +44,35 @@ export class ModalEditProfileComponent implements OnInit {
      get email() { return this.editForm.controls['email']; }
      get gender() { return this.editForm.controls['gender']; }
      get description() { return this.editForm.controls['description']; }
-     get username() { return this.editForm.controls['username']; }
+     get birthDate() { return this.editForm.controls['birthDate']; }
      
 
     editProfile(){
-      // this.player.firstName = this.firstname.value;
-      // this.player.lastName = this.lastname.value;
-      // this.player.phoneNumber = this.cellphone.value;
-      // this.player.emailAddress = this.email.value;
-      // this.player.gender = this.gender.value;
-      // this.player.description = this.description.value;
-      // this.player.username = this.username.value;
-
+      this.progress_bar = true;
       let obj = {
-        username: this.username.value,
-        password: "1234",// se tiene que mandar una contraseña por defecto
+        username: this.player.username,
+        password: 'string',
         firstName: this.firstname.value,
         lastName: this.lastname.value,
         description: this.description.value,
         gender: this.gender.value,
         emailAddress: this.email.value,
         phoneNumber: this.cellphone.value,
-        birthDate: this.player.birthDate,
-        level: this.player.level,
-        hoursPlayed: this.player.hoursPlayed,
-        killDeathRatio: this.player.killDeathRatio
+        birthDate: this.birthDate.value,
+        level: 0,
+        hoursPlayed: 0,
+        killDeathRatio: 0
       }
-      // delete this.player['createdAt'];
-      // delete this.player['updatedAt'];
-      // delete this.player['id'];
-      // this.player['password'] = '1234';
+     
 
       this.playerService.updatePlayer(6, obj).subscribe(res =>{
         this.edit.emit(obj);
         this.dialogRef.close();
+        this.progress_bar = false;
         console.log(this.player)
-      })
+      }), err =>{
+        console.log('err',err)
+      }
       
     }
 

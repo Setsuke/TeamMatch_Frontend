@@ -19,17 +19,21 @@ import { AddTeamplayerComponent } from './pages/add-teamplayer/add-teamplayer.co
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
-import {MatListModule} from '@angular/material/list';
-import {MatInputModule} from '@angular/material/input';
+import { MatListModule} from '@angular/material/list';
+import { MatInputModule} from '@angular/material/input';
 import { MatDialogModule} from '@angular/material/dialog'
-import {TournamentComponent} from './pages/tournament/tournament.component';
-import {OrganizerTournamentComponent} from './pages/organizer-tournament/organizer-tournament.component';
+import { TournamentComponent} from './pages/tournament/tournament.component';
+import { OrganizerTournamentComponent} from './pages/organizer-tournament/organizer-tournament.component';
 import { TournamentPlayerAssingComponent } from './pages/tournament-player-assing/tournament-player-assing.component';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableModule} from '@angular/material/table';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule} from '@angular/material/table';
+import { MatSidenavModule} from '@angular/material/sidenav';
 import { LoginComponent } from './pages/login/login.component';
 import { ModalEditProfileComponent } from './pages/modal-edit-profile/modal-edit-profile.component';
+import { MatSelectModule} from '@angular/material/select';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule} from '@angular/material/core';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,11 @@ import { ModalEditProfileComponent } from './pages/modal-edit-profile/modal-edit
     MatTableModule,
     MatPaginatorModule,
     MatSidenavModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatProgressBarModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
