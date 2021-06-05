@@ -9,14 +9,16 @@ import {AppComponent} from './app.component';
 import {TournamentComponent} from './pages/tournament/tournament.component';
 import {OrganizerTournamentComponent} from './pages/organizer-tournament/organizer-tournament.component';
 import {TournamentPlayerAssingComponent} from './pages/tournament-player-assing/tournament-player-assing.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'teams', component: TeamsComponent },
   { path: 'add-teamplayer', component: AddTeamplayerComponent },
   { path: 'organizers', component: OrganizersComponent},
-  {path: 'register', component: RegisterComponent },
-  {path: 'profile', component: ProfileComponent},
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent},
+  { path: 'profile', component: ProfileComponent},
   { path: 'organizers/:id/free-tournaments', component: TournamentComponent},
   { path: 'player/organizers', component: OrganizerTournamentComponent},
   { path: 'freeTournament/:id/players', component: TournamentPlayerAssingComponent },
