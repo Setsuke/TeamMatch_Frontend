@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { HttpPlayerService } from '../../services/http-player.service';
+import { Player } from 'src/app/models/player';
 
 @Component({
   selector: 'app-modal-edit-profile',
@@ -46,16 +47,35 @@ export class ModalEditProfileComponent implements OnInit {
      
 
     editProfile(){
-      this.player.firstName = this.firstname.value;
-      this.player.lastName = this.lastname.value;
-      this.player.phoneNumber = this.cellphone.value;
-      this.player.emailAddress = this.email.value;
-      this.player.gender = this.gender.value;
-      this.player.description = this.description.value;
-      this.player.username = this.username.value;
+      // this.player.firstName = this.firstname.value;
+      // this.player.lastName = this.lastname.value;
+      // this.player.phoneNumber = this.cellphone.value;
+      // this.player.emailAddress = this.email.value;
+      // this.player.gender = this.gender.value;
+      // this.player.description = this.description.value;
+      // this.player.username = this.username.value;
 
-      this.playerService.updatePlayer(1, this.player).subscribe(res =>{
-        this.edit.emit(this.player);
+      let obj = {
+        username: this.username.value,
+        password: "1234",// se tiene que mandar una contraseña por defecto
+        firstName: this.firstname.value,
+        lastName: this.lastname.value,
+        description: this.description.value,
+        gender: this.gender.value,
+        emailAddress: this.email.value,
+        phoneNumber: this.cellphone.value,
+        birthDate: this.player.birthDate,
+        level: this.player.level,
+        hoursPlayed: this.player.hoursPlayed,
+        killDeathRatio: this.player.killDeathRatio
+      }
+      // delete this.player['createdAt'];
+      // delete this.player['updatedAt'];
+      // delete this.player['id'];
+      // this.player['password'] = '1234';
+
+      this.playerService.updatePlayer(6, obj).subscribe(res =>{
+        this.edit.emit(obj);
         this.dialogRef.close();
         console.log(this.player)
       })

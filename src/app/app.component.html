@@ -1,8 +1,27 @@
-
-<div class="example-container">
+<div class="example-container"> 
+  <!--
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">Team Match</h1>
+    <h1 class="example-app-name">Team Match</h1> -->
+<div id="app"> 
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon>games</mat-icon>
+      </button>
+      <span class="app-name">Team Match</span>
+      <div routerLinkActive="active">
+        <a mat-button  (click)="toHomePage()">Home</a>
+        <a mat-button  [routerLink]="'/players'">Player</a>
+        <a mat-button  [routerLink]="'/organizers'">Organizers</a>
+        <a mat-button  [routerLink]="'/player/organizers'">Tournaments</a>
+        <a mat-button  [routerLink]="'/teams'">Teams</a>
+      </div>
+      <span class="flex-expand"></span>
+      <div >
+        <a mat-button [routerLink]="'/profile'">{{ 'frank_wild@hotmail.com'}}</a>
+      </div>
+    </mat-toolbar-row>
   </mat-toolbar>
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #snav>

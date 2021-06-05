@@ -1,0 +1,17 @@
+table {
+  width: 80%;
+  margin: auto;
+}
+tr.editable-row {
+  background-color: lightcyan;
+}
+tr{
+  background:royalblue;
+
+}
+th{
+  color: white;
+}
+td{
+  background: white;
+}
