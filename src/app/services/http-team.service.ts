@@ -47,4 +47,9 @@ export class HttpTeamService {
     return this.http.delete<Team>(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+  // Unirse a Team
+  joinTeam(idPlayer, idTeam): Observable<any> {
+    return this.http.post<Team>(`${this.basePath}/${idTeam}/players/${idPlayer}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

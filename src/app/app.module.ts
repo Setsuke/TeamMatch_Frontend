@@ -33,7 +33,11 @@ import { ModalEditProfileComponent } from './pages/modal-edit-profile/modal-edit
 import { MatSelectModule} from '@angular/material/select';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule} from '@angular/material/core';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { HomeComponent } from './pages/home/home.component';
+import { SearchTournamentComponent } from './pages/search-tournament/search-tournament.component';
+import { SearchTeamComponent } from './pages/search-team/search-team.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +54,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     TournamentPlayerAssingComponent,
     LoginComponent,
     ModalEditProfileComponent,
+    HomeComponent,
+    SearchTournamentComponent,
+    SearchTeamComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -74,7 +82,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSnackBarModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

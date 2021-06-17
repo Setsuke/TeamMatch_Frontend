@@ -11,7 +11,8 @@
       </button>
       <span class="app-name">Team Match</span>
       <div routerLinkActive="active">
-        <a mat-button  (click)="toHomePage()">Home</a>
+        <!-- <a mat-button  (click)="toHomePage()">Home</a> -->
+        <a mat-button  [routerLink]="'/home'">Home</a>
         <a mat-button  [routerLink]="'/players'">Player</a>
         <a mat-button  [routerLink]="'/organizers'">Organizers</a>
         <a mat-button  [routerLink]="'/player/organizers'">Tournaments</a>
