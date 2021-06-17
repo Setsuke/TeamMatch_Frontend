@@ -38,6 +38,7 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchTournamentComponent } from './pages/search-tournament/search-tournament.component';
 import { SearchTeamComponent } from './pages/search-team/search-team.component';
+import { SelectorTournamentComponent } from './pages/selector-tournament/selector-tournament.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { SearchTeamComponent } from './pages/search-team/search-team.component';
     HomeComponent,
     SearchTournamentComponent,
     SearchTeamComponent,
+    SelectorTournamentComponent,
 
   ],
   imports: [
