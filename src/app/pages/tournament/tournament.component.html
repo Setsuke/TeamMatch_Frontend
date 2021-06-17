@@ -155,6 +155,14 @@
     </table>
     <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
   </mat-card-content>
-
+  
+  <mat-card-title>Create  Tournament</mat-card-title>
+  <div class="mdc-touch-target-wrapper">
+    <button (click)="createTournament" class="mdc-fab mdc-fab--mini mdc-fab--touch">
+      <div class="mdc-fab__ripple"></div>
+      <span class="material-icons mdc-fab__icon">add</span>
+      <div class="mdc-fab__touch"></div>
+    </button>
+  </div>
 
 </mat-card>
