@@ -46,7 +46,6 @@ export class ProfileComponent implements OnInit {
       })
     },1000)
     
-    
     console.log(this.player);
   }
 
