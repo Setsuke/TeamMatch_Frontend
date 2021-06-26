@@ -1,0 +1,22 @@
+.contenedor{
+    width: auto;
+}
+.title{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.list-players{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+    
+}
+.example-header-image {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f4/User_Avatar_2.png');
+    background-size: cover;
+}
+.icon-corona{
+    max-width: 30px;
+    max-height: 30px;
+}

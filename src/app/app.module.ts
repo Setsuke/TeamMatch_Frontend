@@ -42,6 +42,7 @@ import { SelectorTournamentComponent } from './pages/selector-tournament/selecto
 
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFireModule } from '@angular/fire';
+import { RankingPlayersComponent } from './pages/ranking-players/ranking-players.component';
 const config = {
   apiKey: "AIzaSyDFOAiFcpCzyDzwqflT85nbZAKKqI2lkDE",
   authDomain: "team-match-63158.firebaseapp.com",
@@ -71,6 +72,7 @@ const config = {
     SearchTournamentComponent,
     SearchTeamComponent,
     SelectorTournamentComponent,
+    RankingPlayersComponent,
 
   ],
   imports: [

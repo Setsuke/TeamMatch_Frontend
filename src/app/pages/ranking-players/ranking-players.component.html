@@ -1,0 +1,17 @@
+<div class="contenedor">
+    <div class="title">
+        <h1>Best Players <i class="fas fa-crown"></i></h1>
+        <h3>According Kill Death Ratio</h3>
+    </div>
+
+    <div class="list-players">
+        <mat-card class="example-card" *ngFor="let player of listPlayers; let i = index">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{player.firstName}} {{player.lastName}}<img *ngIf="i==0" class="icon-corona" src="../../../assets/corona.jpg" alt=""></mat-card-title>
+                <mat-card-subtitle>Kill Death Ratio: {{player.killDeathRatio}}</mat-card-subtitle>
+              </mat-card-header>
+        </mat-card>
+    </div>
+
+</div>

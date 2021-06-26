@@ -27,6 +27,7 @@ export class PlayersComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   isEditMode: false;
+  showFiller = false;
 
   constructor(private httpPlayerService: HttpPlayerService, private httpOrganizerService: HttpOrganizerService,
     private router:Router) {
