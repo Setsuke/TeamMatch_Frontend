@@ -40,6 +40,18 @@ import { SearchTournamentComponent } from './pages/search-tournament/search-tour
 import { SearchTeamComponent } from './pages/search-team/search-team.component';
 import { SelectorTournamentComponent } from './pages/selector-tournament/selector-tournament.component';
 
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFireModule } from '@angular/fire';
+const config = {
+  apiKey: "AIzaSyDFOAiFcpCzyDzwqflT85nbZAKKqI2lkDE",
+  authDomain: "team-match-63158.firebaseapp.com",
+  projectId: "team-match-63158",
+  storageBucket: "team-match-63158.appspot.com",
+  messagingSenderId: "300317231376",
+  appId: "1:300317231376:web:d9902bdb8ed79ed1337d95",
+  measurementId: "G-HFP0JN9XJY"
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +74,8 @@ import { SelectorTournamentComponent } from './pages/selector-tournament/selecto
 
   ],
   imports: [
+    AngularFireModule.initializeApp(config),
+    AngularFireAnalyticsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

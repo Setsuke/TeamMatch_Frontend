@@ -3,7 +3,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from './services/token-storage.service';
 import {Router} from '@angular/router';
-
+import { AngularFireAnalytics } from '@angular/fire/analytics';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,9 +15,11 @@ export class AppComponent implements OnInit {
   isLoggedIn = false;
   userType: string;
   username: string;
-  constructor(private tokenStorageService: TokenStorageService, private router: Router) {}
+  constructor(private tokenStorageService: TokenStorageService, private router: Router,private analytics: AngularFireAnalytics) {}
 
   ngOnInit(): void {
+    console.log('home pressed')
+    this.analytics.logEvent('clickHomeEvent', {"Home":"homeButtonPressed"})
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     this.userType = localStorage.getItem('user_type');
     if (this.isLoggedIn) {
@@ -31,6 +33,7 @@ export class AppComponent implements OnInit {
     window.location.reload();
   }
   toHomePage(): void {
+  
     if (this.userType === 'player'){
       this.router.navigate(['/playerHomePage']);
     }
