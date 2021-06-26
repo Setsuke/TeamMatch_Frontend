@@ -94,4 +94,8 @@ export class TournamentComponent implements OnInit, AfterViewInit {
   navigateToSelectedTournament(tournamentId): void {
     this.router.navigate([`/freeTournament/${tournamentId}/players`]).then(() => null);
   }
+
+  createTournament(){
+    return this.httpFreeTournament.createTournament(this.studentId).subscribe();
+  }
 }

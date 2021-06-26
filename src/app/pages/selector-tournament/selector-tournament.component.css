@@ -1,0 +1,73 @@
+
+
+.all{
+    background-image: url('../../../assets/fondo.png');
+    border: 1px solid black;
+}
+.contenedor{
+    
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    
+}
+
+.tournament{
+    border: 4px solid white;
+    border-radius: 5%;
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+.join{
+    border: 4px solid white;
+    border-radius: 5%;
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+
+.s-tournament{
+    height: 280px;
+    background-image: url('../../../assets/ss.png');
+    background-size: cover;
+    border-radius: 5%;
+}
+
+.s-tournament:hover{
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: 0.8s;
+}
+
+.t-tournament{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    background-color: black;
+    border-radius: 5%;
+    /* border: 10px solid blue ; */
+}
+
+.t-join{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    background-color: black;
+    border-radius: 5%;
+    /* border: 10px solid blue ; */
+}
+
+.s-join{
+    height: 280px;
+    background-image: url('../../../assets/gg.jpg');
+    background-size: cover;
+    border-radius: 5%;
+}
+
+.s-join:hover{
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: 0.8s;
+}

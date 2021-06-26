@@ -3,6 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {FreeTournament} from '../models/free-tournament';
 import {catchError, retry} from 'rxjs/operators';
+import { Organizer } from '../models/organizer';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +39,11 @@ export class HttpFreeTournamentsService {
     return this.http.post<FreeTournament>(`${this.basePath2}/${idTournament}/players/${idPlayer}`, this.httpOptions )
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  createTournament(item): Observable<Organizer> {
+    return this.http.post<Organizer>(this.basePath, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
 
 }
