@@ -10,6 +10,7 @@ import {catchError, retry} from 'rxjs/operators';
 export class HttpFreeTournamentsService {
 
   basePath = 'https://obscure-mesa-76333.herokuapp.com/api/organizers';
+  basePath2 = 'https://obscure-mesa-76333.herokuapp.com/api/freeTournaments';
   baseTournament = 'free-tournaments';
   constructor(private http: HttpClient) { }
   httpOptions = {
@@ -30,6 +31,11 @@ export class HttpFreeTournamentsService {
 
   getListByOrganizerId(id): Observable<FreeTournament>{
     return this.http.get<FreeTournament>(`${this.basePath}/${id}/${this.baseTournament}`, this.httpOptions )
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  joinPlayertoTournament(idPlayer, idTournament): Observable<FreeTournament> {
+    return this.http.post<FreeTournament>(`${this.basePath2}/${idTournament}/players/${idPlayer}`, this.httpOptions )
       .pipe(retry(2), catchError(this.handleError));
   }
 

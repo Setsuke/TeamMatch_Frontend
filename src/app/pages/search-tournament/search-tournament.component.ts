@@ -3,6 +3,7 @@ import {HttpFreeTournamentsService} from '../../services/http-free-tournaments.s
 import {HttpEnrollmentTournamentService} from '../../services/http-enrollment-tournament.service';
 import {HttpProfessionalTournamentService} from '../../services/http-professional-tournament.service';
 import {MatTableDataSource} from '@angular/material/table';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-search-tournament',
@@ -12,6 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class SearchTournamentComponent implements OnInit {
 
   ID_ORGANIZER: number = 2;
+  ID_PLAYER: number = 8;
   SELECT_TYPE: number;
 
   dataSource = new MatTableDataSource();
@@ -21,7 +23,8 @@ export class SearchTournamentComponent implements OnInit {
     'description', 'prize', 'publicTournament', 'code', 'maxTeams', 'actions'];
   constructor(private freeTournamentService: HttpFreeTournamentsService,
               private enrollmentTournamentService: HttpEnrollmentTournamentService,
-              private professionalTournamentService: HttpProfessionalTournamentService) { }
+              private professionalTournamentService: HttpProfessionalTournamentService,
+              private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -52,6 +55,24 @@ export class SearchTournamentComponent implements OnInit {
           this.dataSourceEnrollment = res.content;
         })
     }
+  }
+
+  joinFreeTournament(id){
+    console.log('join free', id)
+    this.freeTournamentService.joinPlayertoTournament(this.ID_PLAYER, id).subscribe( res =>{
+      // console.log(res);
+      if(res && res.name) {
+        this._snackBar.open(`Te has unido a ${res.name}`, 'Cerrar', {duration:4000, horizontalPosition:'start'})
+      }
+    })
+  }
+
+  joinProfessionalTournament(id){
+    console.log('join pro', id)
+  }
+
+  joinEnrollmentTournament(id){
+    console.log('join enroll', id)
   }
 
 }

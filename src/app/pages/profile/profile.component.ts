@@ -10,6 +10,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  ID_PLAYER: number = 8;
   currentUser: any;
   progress_bar: boolean = false;
   player: Player = {
@@ -39,7 +40,7 @@ export class ProfileComponent implements OnInit {
     // this.playerService.getPlayer(6).subscribe(data => this.player = data);
     this.progress_bar = true;
     setTimeout(()=>{
-      this.playerService.getPlayer(6).subscribe(data =>{
+      this.playerService.getPlayer(this.ID_PLAYER).subscribe(data =>{
         this.progress_bar = false;
         console.log(data)
         this.player = data;
