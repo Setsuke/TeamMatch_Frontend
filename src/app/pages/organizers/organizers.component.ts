@@ -8,7 +8,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {Router} from "@angular/router";
 import {HttpPlayerService} from "../../services/http-player.service";
-
+ 
 @Component({
   selector: 'app-organizer',
   templateUrl: './organizers.component.html',
