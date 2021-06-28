@@ -62,4 +62,14 @@ export class ProfileComponent implements OnInit {
       this.player = playerUpdate
     })
   }
+
+  changeBodyBg(color){
+    document.body.style.background = color;
+  }
+
+  changeHeadingBg(ruta){
+    document.getElementById("heading").style.background = ruta;
+  }
+
+ 
 }

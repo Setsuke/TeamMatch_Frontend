@@ -29,3 +29,13 @@ h3{
     row-gap: 20px;
     column-gap: 5px;
 }
+
+.red{
+    background-image: red;
+}
+
+.username{
+    text-align: center;
+    color: white;
+    text-decoration: solid; 
+}

@@ -12,81 +12,101 @@
 <ng-template #loggedOut>
   Please authenticate first.
 </ng-template> -->
-<div>
-  <div class="contenedor">
-    <mat-progress-bar *ngIf="progress_bar" mode="query"></mat-progress-bar>
-    <mat-card>
-      <button (click)="abrirModalEditar()" class="button-editar" mat-raised-button color="primary"> Editar <span class="material-icons">
-        edit
-        </span></button>
-      <div class="img-profile">
-        <img class="img-user" src="../../../assets/user-1633249_1280-768x749.png" alt="">
-      </div>
-      
-      <div class="datos">
-        <div>
-          <h3>Firstname</h3>
-          <h4>{{player.firstName}}</h4>
-        </div>
 
-        <div>
-          <h3>Lastname</h3>
-          <h4>{{player.lastName}}</h4>
-        </div>
 
-        <div>
-          <h3>Cellphone</h3>
-          <h4>{{player.phoneNumber}}</h4>
-        </div>
-
-        <div>
-          <h3>Email</h3>
-          <h4>{{player.emailAddress}}</h4>
-        </div>
-
-        <div>
-          <h3>Gender</h3>
-          <h4>{{player.gender}}</h4>
-        </div>
-
-        <div>
-          <h3>Description</h3>
-          <h4>{{player.description}}</h4>
-        </div>
-
-        <div>
-          <h3>Birth Date</h3>
-          <h4>{{player.birthDate}}</h4>
-        </div>
-
-        <div>
-          <h3>Username</h3>
-          <h4>{{player.username}}</h4>
-        </div>
-
-        <div>
-          <h3>Level</h3>
-          <h4>{{player.level}}</h4>
-        </div>
-
-        <div>
-          <h3>Hours Played </h3>
-          <h4>{{player.hoursPlayed}}</h4>
-        </div>
-
-        <div>
-          <h3>Kill Death Ratio</h3>
-          <h4>{{player.killDeathRatio}}</h4>
-        </div>
-
-        <div>
-          <h3>Created</h3>
-          <h4>{{player.createdAt}}</h4>
-        </div>
-
-      </div>
-    </mat-card>
+<body>
+  <h1 class="username" id="heading"> {{player.username}} </h1>
+  <!--div>
+      <button type="button" (click)="changeBodyBg('yellow')">Yellow</button>
+      <button type="button" (click)="changeBodyBg('lime')">Lime</button>
+      <button type="button" (click)="changeBodyBg('orange')">Orange</button>
+  </div
+  -->
+  <div>
+      <button type="button" (click)="changeHeadingBg('red')">Red</button>
+      <button type="button" (click)="changeHeadingBg('green')">Green</button>
+      <button type="button" (click)="changeHeadingBg('blue')">Blue</button>
+      <button type="button" (click)="changeHeadingBg('purple')">Purple</button>
+      <button type="button" (click)="changeHeadingBg('orange')">Orange</button>
+      <button type="button" (click)="changeHeadingBg('black')">Black</button>
+      <button type="button" (click)="changeHeadingBg('skyblue')">SkyBlue</button>
+      <button type="button" (click)="changeHeadingBg('')">Clean Bar</button>
   </div>
+</body> 
+  <div>
+    <div class="contenedor">
+      <mat-progress-bar *ngIf="progress_bar" mode="query"></mat-progress-bar>
+      <mat-card>
+        <button (click)="abrirModalEditar()" class="button-editar" mat-raised-button color="primary"> Editar <span class="material-icons">
+          edit
+          </span></button>
+        <div class="img-profile">
+          <img class="img-user" src="../../../assets/user-1633249_1280-768x749.png" alt="">
+        </div>
+        
+        <div class="datos">
+          <div>
+            <h3>Firstname</h3>
+            <h4>{{player.firstName}}</h4>
+          </div>
   
+          <div>
+            <h3>Lastname</h3>
+            <h4>{{player.lastName}}</h4>
+          </div>
   
-</div>
+          <div>
+            <h3>Cellphone</h3>
+            <h4>{{player.phoneNumber}}</h4>
+          </div>
+  
+          <div>
+            <h3>Email</h3>
+            <h4>{{player.emailAddress}}</h4>
+          </div>
+  
+          <div>
+            <h3>Gender</h3>
+            <h4>{{player.gender}}</h4>
+          </div>
+  
+          <div>
+            <h3>Description</h3>
+            <h4>{{player.description}}</h4>
+          </div>
+  
+          <div>
+            <h3>Birth Date</h3>
+            <h4>{{player.birthDate}}</h4>
+          </div>
+  
+          <div>
+            <h3>Username</h3>
+            <h4>{{player.username}}</h4>
+          </div>
+  
+          <div>
+            <h3>Level</h3>
+            <h4>{{player.level}}</h4>
+          </div>
+  
+          <div>
+            <h3>Hours Played </h3>
+            <h4>{{player.hoursPlayed}}</h4>
+          </div>
+  
+          <div>
+            <h3>Kill Death Ratio</h3>
+            <h4>{{player.killDeathRatio}}</h4>
+          </div>
+  
+          <div>
+            <h3>Created</h3>
+            <h4>{{player.createdAt}}</h4>
+          </div>
+  
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
