@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { Player } from 'src/app/models/player';
 import { HttpOrganizerService } from 'src/app/services/http-organizer.service';
 import { HttpPlayerService } from 'src/app/services/http-player.service';
-
+import { AngularFireAnalytics } from '@angular/fire/analytics';
 
 
 @Component({
@@ -30,7 +30,7 @@ export class PlayersComponent implements OnInit, AfterViewInit {
   showFiller = false;
 
   constructor(private httpPlayerService: HttpPlayerService, private httpOrganizerService: HttpOrganizerService,
-    private router:Router) {
+    private router:Router,private analytics: AngularFireAnalytics) {
       this.playerData = {} as Player;
      }
 
@@ -107,6 +107,12 @@ updatePlayer(): void {
       this.cancelEdit();
     });
   }
+
+  rankingEvent():void{
+    this.analytics.logEvent('click_on_rank');
+
+  }
+
 
    onSubmit(): void {
      if (this.playerForm.form.valid){
