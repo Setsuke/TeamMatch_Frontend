@@ -4,6 +4,8 @@ import {HttpPlayerService} from '../../services/http-player.service';
 import {Player} from "../../models/player";
 import { ModalEditProfileComponent} from '../modal-edit-profile/modal-edit-profile.component'
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { AngularFireAnalytics } from '@angular/fire/analytics';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -31,7 +33,8 @@ export class ProfileComponent implements OnInit {
 
 
   };
-  constructor(private tokenStorageService: TokenStorageService, private playerService: HttpPlayerService,public dialog: MatDialog) { }
+  constructor(private tokenStorageService: TokenStorageService, private playerService: HttpPlayerService,public dialog: MatDialog
+    ,private analytics: AngularFireAnalytics) { }
 
   ngOnInit(): void {
     
@@ -64,6 +67,8 @@ export class ProfileComponent implements OnInit {
   }
 
   changeBodyBg(color){
+
+    this.analytics.logEvent('change_banner_color',{'color':color});
     document.body.style.background = color;
   }
 
