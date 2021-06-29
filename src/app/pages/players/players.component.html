@@ -14,7 +14,7 @@
             <mat-card-subtitle>{{ isEditMode ? 'Edit Player' : 'Add new Player' }}</mat-card-subtitle>
           </div>
           <div class="btn-ranking">
-            <button (click)="drawer.toggle()" mat-raised-button>Ranking</button>
+            <button (click)="drawer.toggle();rankingEvent()" mat-raised-button>Ranking</button>
           </div>
         </div> 
       </mat-card-header>
